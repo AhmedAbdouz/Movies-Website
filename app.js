@@ -52,6 +52,7 @@ app.use(express.static(path.join(__dirname, 'public')));
 //});
 //______________________________________________________________________________
 const fs = require('fs');
+var port =process.env.port || 3500;
 
 app.post('/continue',function(req,res){
   res.render('login',{error1 : ""})
@@ -229,7 +230,7 @@ app.get('/darkknight',function(req,res){
 app.get('/fightclub',function(req,res){
   res.render('fightclub',{error1:""});
 });
-app.listen(3500);
+app.listen(port);
 
 
 app.post('/login', function(req,res){
